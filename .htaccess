@@ -1,0 +1,9 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/vhmvheen/faizalapi.fnf77devtest.site/belajarapi-flask"
+PassengerBaseURI "/belajarapi-flask"
+PassengerPython "/home/vhmvheen/virtualenv/faizalapi.fnf77devtest.site/belajarapi-flask/3.9/bin/python"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
