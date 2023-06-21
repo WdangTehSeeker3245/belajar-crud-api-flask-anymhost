@@ -2,12 +2,27 @@ from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///products.db'
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 api = Api(app)
 CORS(app)
+load_dotenv()
+
+# Sqlite
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///products.db'
+
+# Mysql
+db_host = os.getenv('DB_HOST')
+db_port = os.getenv('DB_PORT')
+db_user = os.getenv('DB_USER')
+db_password = os.getenv('DB_PASSWORD')
+db_name = os.getenv('DB_NAME')
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
 
 # Product model
 class Product(db.Model):
