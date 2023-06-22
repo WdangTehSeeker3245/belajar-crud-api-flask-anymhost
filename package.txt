@@ -3,5 +3,7 @@ flask-restful
 flask-sqlalchemy
 flask-mysql
 mysql-connector-python
+flask-bcrypt
+PyJWT
 flask-cors
 python-dotenv

@@ -3,3 +3,4 @@ DB_PORT=3306
 DB_USER=admin
 DB_PASSWORD=izausadmin
 DB_NAME=products
+SECRET_KEY=belajar-restapi
