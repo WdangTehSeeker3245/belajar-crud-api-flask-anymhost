@@ -23,16 +23,16 @@ app.config['SECRET_KEY'] = f'{secret_key}'
 app.config['JWT_EXPIRATION_DELTA'] = timedelta(minutes=30)
 
 # Sqlite
-# db_name = os.getenv('DB_NAME')
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_name}.db'
+db_name = os.getenv('DB_NAME')
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_name}.db'
 
 # Mysql
-db_host = os.getenv('DB_HOST')
-db_port = os.getenv('DB_PORT')
-db_user = os.getenv('DB_USER')
-db_password = os.getenv('DB_PASSWORD')
-db_name = os.getenv('DB_NAME')
-app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+# db_host = os.getenv('DB_HOST')
+# db_port = os.getenv('DB_PORT')
+# db_user = os.getenv('DB_USER')
+# db_password = os.getenv('DB_PASSWORD')
+# db_name = os.getenv('DB_NAME')
+# app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
